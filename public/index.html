@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList Demo - Express 学习项目</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .status {
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Express TodoList Demo</h1>
+        
+        <div class="status success">
+            <strong>✅ 静态文件服务正常工作！</strong><br>
+            如果你能看到这个页面，说明 Express 的静态文件中间件配置成功了。
+        </div>
+        
+        <div class="status info">
+            <strong>📚 当前进度：阶段一 - 基础架构搭建</strong><br>
+            • ✅ 中间件配置完成<br>
+            • ✅ 静态文件服务配置完成<br>
+            • ⏳ 数据存储模块开发中...<br>
+            • ⏳ 路由模块待开发...<br>
+        </div>
+
+        <div class="status info">
+            <strong>🔧 技术栈</strong><br>
+            • 后端：Express.js<br>
+            • 前端：原生 HTML/CSS/JavaScript<br>
+            • 数据存储：内存存储（学习阶段）<br>
+        </div>
+    </div>
+
+    <script>
+        // 简单的 JavaScript 测试
+        console.log('🚀 前端页面加载成功！');
+        console.log('📍 当前时间：', new Date().toLocaleString());
+    </script>
+</body>
+</html>
