@@ -174,16 +174,3 @@ module.exports = {
   getStats,
   clearAllTodos,
 };
-
-// 初始化一些示例数据（仅用于开发测试）
-if (process.env.NODE_ENV !== "production") {
-  console.log("🌱 初始化示例数据...");
-  createTodo({ title: "学习 Express 中间件" });
-  createTodo({ title: "实现 RESTful API" });
-  createTodo({ title: "创建前端界面" });
-
-  // 标记第一个任务为已完成
-  updateTodo(1, { completed: true });
-
-  console.log("✅ 示例数据初始化完成");
-}

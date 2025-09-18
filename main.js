@@ -10,59 +10,52 @@
 
 const express = require("express");
 const setupMiddleware = require("./middleware");
-const storage = require("./storage");
+const setupRouters = require("./routes");
 
 // 创建 Express 应用实例
 const app = express();
 const port = process.env.PORT || 3000;
 
-console.log("🚀 启动 Express TodoList Demo...");
-
 // 配置所有中间件
 setupMiddleware(app);
 
-/**
- * 基础路由 - 重定向到静态页面
- * 当用户访问根路径时，重定向到我们的 HTML 页面
- */
-app.get("/", (req, res) => {
-  res.redirect("/index.html");
-});
+// 注册路由
+setupRouters(app);
 
-/**
- * API 健康检查路由
- * 用于检查服务器是否正常运行
- */
-app.get("/api/health", (req, res) => {
-  const stats = storage.getStats();
-  res.json({
-    status: "ok",
-    message: "TodoList API 运行正常",
-    timestamp: new Date().toISOString(),
-    stats: stats,
-  });
-});
+// /**
+//  * API 健康检查路由
+//  * 用于检查服务器是否正常运行
+//  */
+// app.get("/api/health", (req, res) => {
+//   const stats = storage.getStats();
+//   res.json({
+//     status: "ok",
+//     message: "TodoList API 运行正常",
+//     timestamp: new Date().toISOString(),
+//     stats: stats,
+//   });
+// });
 
-/**
- * 获取所有 todos 的简单路由（临时测试用）
- * 在下个阶段我们会把这些移到专门的路由文件中
- */
-app.get("/api/todos", (req, res) => {
-  try {
-    const todos = storage.getAllTodos();
-    res.json({
-      success: true,
-      data: todos,
-      count: todos.length,
-    });
-  } catch (error) {
-    console.error("获取 todos 失败:", error);
-    res.status(500).json({
-      success: false,
-      message: "服务器内部错误",
-    });
-  }
-});
+// /**
+//  * 获取所有 todos 的简单路由（临时测试用）
+//  * 在下个阶段我们会把这些移到专门的路由文件中
+//  */
+// app.get("/api/todos", (req, res) => {
+//   try {
+//     const todos = storage.getAllTodos();
+//     res.json({
+//       success: true,
+//       data: todos,
+//       count: todos.length,
+//     });
+//   } catch (error) {
+//     console.error("获取 todos 失败:", error);
+//     res.status(500).json({
+//       success: false,
+//       message: "服务器内部错误",
+//     });
+//   }
+// });
 
 /**
  * 404 错误处理 - 处理未找到的路由
@@ -95,7 +88,6 @@ app.use((err, req, res, next) => {
  */
 app.listen(port, () => {
   console.log(`📍 本地访问地址: http://localhost:${port}`);
-  console.log(`\n💡 提示: 按 Ctrl+C 停止服务器`);
 });
 
 /**

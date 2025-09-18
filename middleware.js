@@ -40,8 +40,6 @@ const setupMiddleware = (app) => {
   // 注意：静态文件中间件处理完请求后不会调用 next()，所以日志中间件必须在它之前
   app.use(express.static("public"));
   console.log("✅ 静态文件服务中间件已配置");
-
-  console.log("🎉 所有中间件配置完成！");
 };
 
 module.exports = setupMiddleware;

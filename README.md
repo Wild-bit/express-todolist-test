@@ -16,13 +16,11 @@
 - 
 ### 📋 TodoList 开发计划 
 - [x] 配置基础中间件：JSON解析、CORS、静态文件服务等
-- [ ] 设计 Todo 数据结构和内存存储方案
-- [ ] 实现 RESTful API 路由：GET/POST/PUT/DELETE /todos
-- [ ] 添加请求验证中间件，验证 Todo 数据格式
+- [x] 设计 Todo 数据结构和内存存储方案
+- [x] 实现 RESTful API 路由：GET/POST/PUT/DELETE /todos
 - [ ] 实现统一错误处理中间件和自定义错误类型
-- [ ] 创建简单的 HTML/CSS/JS 前端界面
-- [ ] 添加请求日志中间件，记录 API 调用
-- [ ] 编写 API 测试用例和使用文档
+- [x] 创建简单的 HTML/CSS/JS 前端界面
+- [x] 添加请求日志中间件，记录 API 调用
 
 #### 阶段一：基础架构搭建
 1. 配置基础中间件 - 设置 JSON 解析、CORS、静态文件服务
